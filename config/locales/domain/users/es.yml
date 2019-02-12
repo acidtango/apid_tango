@@ -1,0 +1,12 @@
+es:
+  domain:
+    users:
+      not_found: No se ha encontrado al usuario
+      registration:
+        create_error: El email ya se encuentra en uso
+      email:
+        not_found: No se encontró un usuario con ese email
+      token:
+        not_found: Token inválido
+      authentication:
+        invalid_organization: El usuario no pertenece a la organización

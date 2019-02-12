@@ -1,0 +1,7 @@
+es:
+  models:
+    errors:
+      invalid_refresh_token:
+        title: Token de actualización inválido
+      resource_already_exists:
+        title: El recurso especificado ya existe

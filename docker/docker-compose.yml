@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  # rails app service
+  api:
+    container_name: apid_tango
+    image: XXXXXXXXXXXX.dkr.ecr.eu-west-1.amazonaws.com/apid-tango:${APP_DEPLOY_VERSION:-latest}
+    # sources environment variable configuration for our app
+    env_file: ../.env
+    # rely on the RAILS_ENV value of the host machine
+    environment:
+      RAILS_ENV: ${RAILS_ENV:-development}
+      JWT_PUBLIC_KEY: /usr/src/app/certs/jwtRS256.key

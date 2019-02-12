@@ -1,0 +1,15 @@
+es:
+  apid_tango:
+    errors:
+      unauthorized_access:
+        title: Acceso no autorizado
+        missing_user: La información de autenticación es incorrecta o no ha sido provista
+        forbidden: No posee acceso a esta operación
+      restricted_access:
+        title: Acceso no permitido
+        message: No posee acceso a este recurso
+      not_found:
+        title: No Encontrado
+      resource_not_found:
+        title: Recurso No Encontrado
+      parameter_missing: el valor del parametro %{param} no puede ser vacío

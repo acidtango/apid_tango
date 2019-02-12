@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function run_in_docker {
+  docker-compose -f docker/docker-compose.yml -f docker/docker-compose.test.yml \
+                 run --rm api $@
+}
+
+if [ "$1" == "setup" ]; then
+  run_in_docker rails db:create db:schema:load
+else
+  run_in_docker rspec $@
+fi

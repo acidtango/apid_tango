@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  # in test we add a database
+  test_db:
+    image: postgres:10
+    environment:
+      POSTGRES_DB: apid_tango_test
+      POSTGRES_USER: apid_tango
+      POSTGRES_PASSWORD:
+  api:
+    # map our application source code, in full, to the application root of our container
+    volumes:
+      - ../.:/usr/src/app:Z
+    command: /usr/local/bin/bundle exec rspec
+    depends_on:
+      - test_db
+    environment:
+      RAILS_ENV: test
+      DATABASE_HOST: test_db
+      POSTGRES_DB: apid_tango_test
+      POSTGRES_USER: apid_tango
+      POSTGRES_PASSWORD:

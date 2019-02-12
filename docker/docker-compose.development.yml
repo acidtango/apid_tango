@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  # api server
+  api: &api
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../.:/usr/src/app:z
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://apid_tango@apid-tango-db/apid_tango_dev
+    links:
+      - db:apid-tango-db
+    depends_on:
+      - db
+
+  # in development we add a database
+  db:
+    container_name: apid_tango_db
+    image: postgres:10
+    environment:
+      POSTGRES_USER: apid_tango
+      POSTGRES_DB: apid_tango_dev
+    volumes:
+      - apid-tango-db-data:/var/lib/postgresql/data
+
+volumes:
+  apid-tango-db-data:

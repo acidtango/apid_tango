@@ -1,0 +1,26 @@
+require: rubocop-rspec
+Metrics/LineLength:
+  Max: 100
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/test_helper.rb'
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - bin/*
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*_spec.rb'
+    - 'spec/shared/*.rb'
+    - 'spec/factories/*.rb'
+    - 'config/routes.rb'
+    - 'config/routes/*.rb'
+    - 'config/environments/*.rb'
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/requests/**/*_spec.rb'
+    - 'spec/routing/**/*_spec.rb'
+    - 'spec/lib/tasks/**/*_spec.rb'

@@ -1,0 +1,33 @@
+---
+
+### Generic smell configuration
+
+detectors:
+  Attribute:
+    enabled: false
+
+  NilCheck:
+    enabled: false
+
+  UtilityFunction:
+    exclude:
+      - Authentication::FailureApp#call
+
+  TooManyStatements:
+    exclude:
+      - Authentication#self.configure_warden!
+
+### Directory specific configuration
+
+# directories:
+
+
+### Excluding directories
+
+# Directories and files below will not be scanned at all
+
+exclude_paths:
+  - db/migrate
+  - vendor
+  - app/domain/authentication/encryptor.rb
+  - app/domain/authentication/model/trackable.rb

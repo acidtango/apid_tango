@@ -1,0 +1,16 @@
+en:
+  hello: "Hello world"
+  apid_tango:
+    errors:
+      unauthorized_access:
+        title: Unauthorized Access
+        missing_user: Authentication info is either wrong or missing
+        forbidden: You don't have access to this operation
+      restricted_access:
+        title: Forbidden Access
+        message: You don't have access to this resource
+      not_found:
+        title: Not found
+      resource_not_found:
+        title: Resource Not Found
+      parameter_missing: "param is missing or the value is empty: %{param}"

@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  api:
+    # build our custom dockerfile
+    build:
+      context: ../
+      dockerfile: docker/api.Dockerfile

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function run_in_docker {
+  echo "Running $1"
+  docker-compose -f docker/docker-compose.yml -f docker/docker-compose.development.yml \
+                 run --rm api $@
+}
+
+case $1 in
+  rubocop|reek) run_in_docker $@;;
+  *)  run_in_docker rubocop $@
+      run_in_docker reek $@;;
+esac

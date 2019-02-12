@@ -1,0 +1,7 @@
+en:
+  models:
+    errors:
+      invalid_refresh_token:
+        title: Invalid Refresh Token
+      resource_already_exists:
+        title: The specified resource already exists
