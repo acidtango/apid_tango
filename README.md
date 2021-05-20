@@ -1,3 +1,15 @@
+# DEPRECATION NOTICE
+
+This repository is abandoned. At the moment on writing this, dependabot have reported several vulnerabilities:
+- CVE-2020-10663
+- CVE-2020-8130
+- CVE-2020-8184
+- CVE-2019-18978
+- CVE-2019-15587
+and much more. 
+
+You are discouraged to use this repository.
+
 # apid-tango
 
 Boilerplate to start Rails API projects
